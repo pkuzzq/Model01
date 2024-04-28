@@ -1,28 +1,21 @@
 ---
-title: La Palma Earthquakes
+title: Model and Perspective
 author:
-  - name: Steve Purves
-    orcid: 0000-0002-0760-5497
+  - name: Jason ZHOU
+    orcid: 0000-0001-7685-5337
     corresponding: true
-    email: steve@curvenote.com
+    email: pkuzzq@pku.edu.cn
     roles:
       - Investigation
       - Project administration
       - Software
       - Visualization
     affiliations:
-      - Curvenote
-  - name: Rowan Cockett
-    orcid: 0000-0002-7859-8394
-    corresponding: false
-    roles: []
-    affiliations:
-      - Curvenote
+      - Peking University
 keywords:
-  - La Palma
-  - Earthquakes
+  - 模型
 abstract: |
-  In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). ...
+  In September 2021
 plain-language-summary: |
   Earthquake data for the island of La Palma from the September 2021 eruption is found ...
 key-points:
@@ -31,36 +24,243 @@ key-points:
 date: last-modified
 bibliography: references.bib
 citation:
-  container-title: Earth and Space Science
+  container-title: Model and Perspective
 number-sections: true
 ---
 
-## Introduction
+## 阅读清单
+- 竞技的经济学  → 刻画竞赛设计
+- 把赛事与旅游部分进行比较
+- 政治上可争议的租金和转让，作者 Arye L. Hillman 和 John G. Riley
+  - Naudhus/weizman 的模型，气候
+  - Tirole（2003）我们讲过的双边市场
+  - Hotelling model
+- 张龙天师兄的模型 → em
+- Handbook of Choice Modelling
+- 选择建模手册
+- The Impact of Strategic Alliances on the Hospitality and Travel Industry Stakeholders' Quality of Life 
+- 战略联盟对酒店和旅游业利益相关者生活质量的影响
+- The Feasibility of Regulating Gambling on the Internet
+- 互联网赌博监管的可行性
+- The Relationships among Business Strategies, Organizational Performance and Organizational Culture in the Tourism Industry 
+- 旅游业中商业策略、组织绩效和组织文化之间的关系
+- Indebtedness of the Tourism Sector in Mediterranean Countries
+- 地中海国家旅游业的负债
+- Keynesian Policies for Tourism: Taxation without Coordination
+- 旅游业的凯恩斯主义政策：缺乏协调的税收
+- A Panel Data Analysis of the Effect of Corruption on Tourism
+- 腐败对旅游业影响的面板数据分析
+- Assessing a Tourism Satellite Account: A Programme For Ascertaining Conformance with United Nations Standards
+- Indebtedness of the Tourism Sector in Mediterranean Countries
+- The Relationships among Business Strategies, Organizational Performance and Organizational Culture in the Tourism Industry
+- Tourism and Poverty Reduction: An Economic Sector Analysis for Costa Rica and Nicaragua
+- The Sports Business as a Labor Market Laboratory 
+- Sports Market Capacity, Frequency of Movements, and Age in the NBA Players Salary Determination
+- The Evolving European Model of Professional Sports Finance 
+- The Tax Benefits of Hosting the Super Bowl and the MLB All Star Game: The Houston Experience
+- Competition Policy in Profession Sports: Europe After the Bosman Case 
+- Baseball on Trial: The Origin of Baseball's Antitrust Exemption
+- Methodological Individualism and Cultural Economics
+- Estimates of the Dimensions of the Sports Market in the US Greek Football
+- Clubs' Efficiency before and after Euro 2004 Victory: A Bootstrap Approach
+- The Economics of Intercollegiate Sports
+- Tourism and Economic Development: Evidence from Mexico's Coastline
+- Are the Olympics ever worth it for the host city?
+- Will cities ever break the habit of paying for stadiums?
+- Going for the Gold: The Economics of the Olympics
+- Betting on beach tourism
 
-```{r}
-eruptions <- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions <- length(eruptions)
-```
 
-```{r}
-#| label: fig-timeline
-#| fig-cap: Timeline of recent earthquakes on La Palma
-#| fig-alt: An event plot of the years of the last 8 eruptions on La Palma.
-#| fig-height: 1.5
-#| fig-width: 6
-par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = "|", axes = FALSE)
-axis(1)
-box()
-```
+## {生产率}
 
-```{r}
-#| output: false
-avg_years_between_eruptions <- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions
-```
+提高收入和生活水平（即人均 GDP）的唯一途径是提高实际生产率，即每单位投入（即每工作小时）产生的产出量
 
+Productivity
+The Office of Productivity and Technology (OPT) measures how efficiently the U.S. converts inputs into the outputs of goods and services.  Measures of labor productivity compare the growth in output to the growth in hours worked and measures of total factor productivity (TFP), also known as multifactor productivity (MFP), compare growth in output to the growth in a combination of inputs that include labor, capital, energy, materials, and purchased services.
+
+您提到的生产力和技术办公室（OPT）是一个关注如何将各种投入转换为产出的效率的机构。这里面涉及到两种重要的生产率衡量方式：劳动生产率和全要素生产率（TFP），也称为多要素生产率（MFP）。让我们详细了解一下这两种衡量方式：
+
+劳动生产率是衡量单位劳动输入（如工作小时数）所产出的商品和服务数量的指标。这是一个相对简单的衡量标准，通常用于评估工人的效率和经济增长的一个方面。计算劳动生产率的公式通常是：
+$$ \text{劳动生产率} = \frac{\text{总产出}}{\text{劳动投入}} $$
+例如，如果一个工厂的员工在一周内生产了1000个单位的产品，并且总共工作了500小时，那么劳动生产率为2个单位/小时。
+
+全要素生产率（TFP），或称多要素生产率（MFP），是一种更为复杂的衡量标准，它考虑了所有类型的投入（包括劳动、资本、能源、材料和购买的服务）在产出中的综合效率。TFP的计算不仅反映了劳动力的效率，还反映了资本的效率以及技术进步的贡献。TFP的增长通常被视为技术变革和提高效率的指标。它的计算涉及到比较产出的增长与所有这些投入的增长：
+$$ \text{TFP增长} = \text{产出增长} - \text{加权的投入增长} $$
+举个例子，如果一家公司的产出增长了10%，而劳动力、资本和其他投入的加权平均增长为8%，那么TFP增长为2%。
+
+这两种生产率的衡量对于政策制定者、企业管理层以及经济学家来说都非常重要。劳动生产率的提高通常与工人培训、工作效率改进等因素相关，而TFP的增长则通常被解释为技术创新和更有效的资源管理。国家和企业通过监控这些指标可以评估他们的经济表现、竞争力以及潜在的经济增长。
+
+通过理解和分析这些生产率指标，可以更好地把握经济的健康状况和发展方向，为制定提高经济效率和增长的战略提供数据支持。
+
+在美国用平均工资（1900-1999 年）购买各种产品所需的工作时间（分钟）
+
+一天工资可以购买的卡路里数Amount of calories a day's wages can buy
+
+- 从生物学角度来说，一个人每天需要大约 2500 卡路里才能生存，这会根据身高、体重和性别而有明显的差异
+
+购买 1,000 流明光照所需的劳动时间
+
+## 一个主要的前古典观点：重商主义
+
+### 托马斯·穆勒
+他认为，一个国家的财富可以通过积极的贸易平衡来增加，即出口的价值应超过进口的价值。这种思想主张通过对外贸易获取黄金和银子，以此增加国家的财富和宝藏。
+
+经济模型影响：孟的理论强调了国家干预经济活动的重要性，尤其是通过关税和出口补贴来支持本国产业的发展。这种思想主张国家之间的经济竞争，认为贸易是零和游戏。
+
+### 亚当·斯密
+
+分工显著提升了劳动生产力，是技能、灵巧性和判断力在各地发挥作用的核心。每个人都有一种改善自身状况的强烈动力，这种动力足以推动社会向富裕和繁荣发展，克服各种法律障碍。除了和平、低税负和公正的司法管理外，几乎没有其他方式能将一个国家从落后状态提升至富裕的高度：一切富裕都是自然进程的结果。消费是生产的唯一目标；生产者应专注于在必要的范围内促进消费者的利益。节俭能够增加资本，而挥霍及不当行为会削减资本。一个人节省下的任何收入都会增加其资本，既可以用来支持更多的生产性劳动，也可以通过借贷他人以获得利息来实现这一点。个人的资本只能通过节省年收入来增加……因此，社会上所有个体的资本增长也依赖于同样的方式。一个国家的土地和劳动产出增长只能通过增加生产性劳动者的数量或提高现有员工的工作效率来实现。显然，生产性劳动者的数量不可能大幅增加，但可以通过增加投资或维持他们所需的经费来实现目标。只有通过优化流程、缩短时间和使用合适的工具，或者合理配置工作，才能提高同样数量员工的效率。在这两种情况下，都需要额外的资金投入。
+
+
+### 李嘉图
+
+1.一个国家的富裕程度并不取决于它的货币多少或商品的货币价值多高，而是取决于其商品的实际丰富程度——这些商品能够为人们的生活带来舒适和享受。
+
+2.在李嘉图看来，土地是一个固定要素（对于 19 世纪的英国来说肯定有道理），报酬递减首先在大多数（农业）生产性土地上开始耕种将耕种扩展到更差的边际土地和更差的边际土地。当一个地区的所有肥沃土地都已经开垦之后，如果人口和资本继续增长，就需要更多的食物，这些食物只能依赖那些条件较差(越来越边缘的土地)的土地来生产。这就意味着，尽管劳动工资未变，运输产品到消费地的成本增加了，因为需要更多的劳动力和运输工具，这也意味着需要更多的资本来维持同等水平的产品输出。
+
+3.在李嘉图的视角中，如果一个国家的土地面积无限且质量均匀，那么使用这些土地将不会产生任何成本。地租的存在是因为，随着人们开始开垦，需要投入更多的劳动和资本来获取较少的回报。最终，土地的边际产量会减少到零，这意味着没有更多的收益可以从这些土地上获得。
+
+4.长期看来，土地边际产出越来越少，导致资本的利润降低，工人工资下降到仅足以维持基本生活。在这种均衡状态下，地主因为土地稀缺而能够收取高额地租，从而获得巨大收益。他们的收益与社会其他成员的利益形成对立。李嘉图的分析不仅关注在这种均衡状态下地主、资本家和工人的收入分配。在土地报酬递减、经济地租（“李嘉图地租”）——高于机会成本的收益，由于相对质量差异和某些固定因素的稀缺而产生之下，会形成“稳态经济”模式，但衍生出一个政治问题就是“寻租”的现象。
+
+亚当·斯密对土地探讨：
+当土地变成私有财产后，地主们就像其他所有者一样，期望在他们未曾耕作的地方收获，还要求为这些自然资源的产出支付租金。
+
+当这些资源属于公共财产时，劳动者只需要付出采集的劳动即可。例如，森林中的木材、田野中的草，以及地球上的所有自然果实，当这些资源属于公共财产时，劳动者只需要付出采集的劳动即可。
+
+当这些资源是私有时，劳动者不仅需要付出采集的劳动，还必须支付一定的费用获取采集许可，且需要将他的劳动所得的一部分上交给地主。这部分所得的价值就构成了土地的租金。因此，土地租金作为一种使用费，实质上是一种垄断价格。这个价格并不基于地主对土地的改良投入或其成本，而是基于农民的承受能力来确定的。这种定价方式体现了土地私有制下的经济压力和社会不平等。
+
+从李嘉图的土地极差地租到经济租。在完全竞争市场中，企业将在 $AC_{min}$ 上组织生产。但如果每个企业的 $MC$  是不同的（事实上也不可能相同），完全竞争会是生产有效的么？企业为什么非要在 $p^{*}=AC_{min}$ 时进入市场？一些企业效率更高，所以他们进入市场的边际成本和平均成本更低。更低的原因可能是企业家的卓越管理能力或者拥有更优质的资源条件。但是，这些企业一定是非常少见的，就像球员中 LeBron James 等，很难大量出现。这些优质企业，位于行业的 $AC_{min}$  上，那是因为最低点对应的市场价格 $p$，足够高，以至于可以让效率低的企业获得足够多的收入，维持他们的生存（这个生存方式，可能仅仅够支付可变成本的）。经济租的定义就是，高效率企业获得的收益与其支付的成本（为留住高品质生产要素的支付的机会成本，通常更高）之间的差额，这部分的差额是成本低于行业其他企业平均成本的额外回报，具有正义性。握有经济租的企业是优质企业，他们可以把资源或要素转售给其他企业，比如球员转会、迁址等，那么这个时候的经济租就是一种“成本”。如果把这个经济租的成本与其他成本加总在一起，那么在均衡时，总成本应该等于总收益；除此之外的其他任何位置上，总成本应该大于总收益。若果包含了经济租在内的总成本曲线，推导出的平均成本与企业相切与均衡点，这个  $AC^{\prime}$ 在普通 $AC$ 之上，这样在计算每个企业的规模报酬时候，仍然可以考虑不同价格切于 $AC$ 最低点的情况。
+
+但是这样的处理方式 也有一个缺点，就是资本、劳动等传统要素的会计核算方式与经济租是不同的。经济租是价格决定的，而不是决定价格的因素。在企业生产决策时，考虑的边际成本曲线中并不包含经济租。经济租的概念是生产要素（如土地、劳动力、资本）获得的超过其机会成本的收入。在生产决策中，企业通常将经济租视为固定成本，因此它不随生产量的变化而变化。因此，在边际成本曲线中，经济租通常不包含在内。另一方面，经济租之所以是由价格决定的，是因为如果行业的供给曲线向上倾斜，需求提高就会抬高市场均衡价格，进而使得现有企业在保持产量不变的情况下，收入增加，进而经济租增加。这会引发单个企业的平均成本曲线从$AC^{\prime}$ 再次提高到$AC^{\prime\prime}$，并与新的市场均衡价格$p^{\prime}$  再次相切。再一次强调，在$MC=MR$的决策中，刻画成本曲线是帮助确定价格接受厂商的生产决策，进而找到市场的均衡价格和均衡数量，由于竞争机制导致经济租趋于 0，因此每个企业都在排除了经济租之外的平均成本最低处进行生产。
+
+
+### 马尔萨斯
+
+如果人口不受控制，就会按几何级数增长。而生活资料只按算术级数增长。只要稍微了解一下数字，就会发现前者的力量比后者大得多。”“人口增长的能力远远超过地球为人类提供生活资料的能力，因此，某种形式的早逝必然会降临到人类头上。马尔萨斯”陷阱：有限的资源对人口增长施加了严格的限制 当社会发展得过大时，稀缺的资源会杀死人口（饥荒、疾病、战争） 非常重要的概念，我们将在以后的课程中更详细地探讨它
+
+古典经济学家论增长：
+
+史密斯更加乐观和充满活力，再次试图解释为什么国家会变得富裕，而李嘉图对未来持悲观态度：一个静态的长期均衡稳态。“李嘉图的恶习”是使用高度抽象的简单模型进行经济分析，经济学作为“悲惨的科学。
+政治经济学”（正如古典主义者所称）随后在接下来的 100 年左右转向了更内在的东西。更具技术性的经济科学修正了古典主义者在价值、价格等方面犯下的错误，更多的数学工具专注于寻找资源最优配置的条件（边际分析）。直到 20 世纪中叶，（大多数）经济学家才回到激发斯密和李嘉图的“宏大”宏观问题。
+
+## 20 世纪新古典增长模型
+
+罗斯托的增长阶段：传统、前提条件、 起飞、 成熟、 大众消费
+
+哈罗德-多马模型：
+基于凯恩斯宏观经济概念。 边际储蓄倾向 (MPS)、增量资本产出比率 (ICOR)，生产额外一美元产出 Y 所需的资本存量 K 的增加。
+经济的均衡增长率=MPS/ICOR。我们可以推断出产生所需增长率的必要条件。“融资缺口”是指从模型预测的“所需”投资率和一个国家实际储蓄率之间的差距。低收入国家无法增加储蓄 ⟹ 来自储蓄率较高的国家的外援foreign aid将直接导致快速增长。总之，多马模型并非旨在成为增长模型，作为增长模型毫无意义，并且作为增长模型遭到否定。因此，具有讽刺意味的是，多马增长模型成为，并且至今仍然是经济史上应用最广泛的增长模型
+
+
+## 外生增长理论
+
+Kaldor's Stylized Facts About Growth
+一个关于资本主义经济中增长过程性质的令人满意的模型也必须解释最近的实证调查所揭示的显著的历史不变性
+
+卡尔多关于经济增长的关键观察事实包括：
+
+1.每位工人的产出随着时间的推移而增长。
+2.每位工人所拥有的资本量也在增加。
+3.随着时间的推移，资本与产出的比例大致保持稳定。
+4.资本和劳动在总产出中所占的比重随时间基本稳定。
+5.资本的收益率基本上不随时间改变。
+6.不同国家之间人均产出的水平存在显著差异。
+
+
+### Solow模型
+### 简单Solow模型
+
+1. **生产函数**：
+   生产函数是 Cobb-Douglas 形式，对于每个单一生产要素而言，边际产量是下降的。实物资本K能够进行积累。技术增长率是外生的，被一个固定的参数决定。储蓄率和投资率是固定的。该形式能够更好的刻画边际产出递减的特性的生产函数，公式为：
+   $$
+   Y_t = A_t K_t^\alpha L_t^{1-\alpha}
+   $$
+   其中，$Y_t$ 是产出，$K_t$ 是资本存量，$L_t$ 是劳动力，$A_t$ 是全要素生产率（技术水平），$\alpha$ 是资本的产出弹性。
+
+\begin{equation}
+C_t+I_t=Y_t=f(K, L)
+\end{equation}
+
+左边是支出部分，右边是收入部分。
+支出包含了消费和投资的部分。收入部分，
+
+其中，储蓄行为是国民收入的部分比例，假设储蓄率是外生的且为$s$:
+   $$
+   S_t = sY_t
+   $$
+   其中，$s$ 是储蓄率，介于 0 和 1 之间。
+
+2. **投资与储蓄关系**：
+
+
+   在索罗模型中，储蓄等于投资：
+   $$
+   S_t = I_t
+   $$
+   这里，$S_t$ 是储蓄，$I_t$ 是投资。
+
+
+
+4. **资本折旧**：
+   资本存量按固定折旧率 $\delta$ 折旧，资本存量的更新公式为：
+   $$
+   K_{t+1} = (1-\delta)K_t + I_t
+   $$
+   其中，$\delta$ 是折旧率。
+
+资本动态。索罗模型主要分析资本存量如何随时间变化，以及这如何影响产出、储蓄和消费。模型中资本存量的变化公式可以写作：
+$$
+K_{t+1} = (1-\delta)K_t + sA_t K_t^\alpha L_t^{1-\alpha}
+$$
+
+稳态分析。索罗模型特别关注经济达到稳态时的状况，稳态即资本存量不再变化的状态，此时：
+$$
+\Delta K_{t+1} = 0 \quad \text{or} \quad K_{ss} = \left(\frac{sA}{\delta}\right)^{\frac{1}{1-\alpha}}L
+$$
+其中 $K_{ss}$ 是稳态下的资本存量。
+
+稳态时的资本产出比。当资本和产出以相同的速率增长时，稳态资本产出比为：
+$$
+\frac{K}{Y} = \frac{s}{\delta + g}
+$$
+其中 $g$ 是经济增长率。
+
+稳态均衡意味着：投资等于折旧。在稳态均衡Steady-State equilibrium下，我们确保下一个时期的资本存量不会减少，因此有$K_{t+1}=K_t$的均衡条件，得到$δK=sf(K,L)$，即资本折旧量等于储蓄和投资于新资本形成的量。资本增长“收支平衡”确保使资本存量随着时间的推移保持恒定。
+
+改写为$k=K/L$形式，稳态均衡Steady-State equilibrium下有$δk=sf(k)$ 
+当投资大于折旧时，资本存量会继续累积，资本存量的增长增长率大于 0，即 $g_K>0$；当投资小于折旧时，资本存量会减少，资本存量增长率小于 0，即 $g_K<0$；投资等于折旧时，达到稳态均衡。需要强调的是，这里有个前提就是资本存量符合报酬递减率（law of  diminishing returns）。
+
+当资本存量处于很低水平时候，如一个城市中赛事或者场地设施的仅有很少的投资，那么所有的“第一次”的资本存量就能够带来更大的实物资本的边际产量 $MP_K$。这个时候的资本存量一方面对产出边际贡献度更大一些，随之带来的是投资额度的增加，这进一步加快了资本的积累。另一方面，此时的资本折旧水平相对较低，新购买的实物资本能够带来更多产出，而不是替代、翻修、更新已有的资本。但是当资本存量积累到一定规模后，社会中需要修缮的资本比重越来越高，在报酬递减率的影响下，实物资本对生产带来的边际作用越来越小。
+
+从经验数据中表明了这一点，首先德国、日本在战后刚恢复的几年间，经济增长率（ Y 的增长率）非常高，但当发展到一定阶段后，经济增长率开始下降。经历了从 high growth 到 low growth 的阶段。
+
+比较静态分析。把储蓄率提高，实质是投资曲线的上移，导致稳态均衡时的资本存量水平更高。该方式能够将 low growth 短期转换到 high growth 的轨道上。当达到新的稳态均衡后，经济增长为 0。实物资本的积累维持短期的经济增长。
+
+
+
+
+
++
+\begin{equation}
+I_t=sf(K_t, L_t)
+\end{equation}
+
+投资等于收入（等于产出）中用于储蓄的部分
+
+
+\begin{equation}
+K_{t+1}=K_t(1- \delta) + I_t
+\end{equation}
+
+资本存量$K$随着时间的推移而变化，原因有折旧（ $\delta$）和新投资$I_t$。
+$L_t=L$
+劳动力存量不随时间变化。因此，资本增长为：
+
+\begin{equation}
+K_{t+1}=K_t(1- \delta) +sf(K_t, L_t)
+\end{equation}
+
+---
 Based on data up to and including 1971, eruptions on La Palma happen every `r round(avg_years_between_eruptions, 1)` years on average.
 
 Studies of the magma systems feeding the volcano, such as @marrero2019, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).
