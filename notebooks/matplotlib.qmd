@@ -1,0 +1,46 @@
+---
+title: matplotlib demo
+
+---
+
+
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 根据给定图像特性定义函数
+# 假设这些是标准的经济函数，我们通常有：
+# 输出 (Y) 是资本 (K) 的函数，有递减的回报
+# 储蓄是输出 (Y) 的一定比例（假设储蓄率是恒定的）
+# 折旧是资本 (K) 的线性函数
+
+K = np.linspace(0, 400, 400)  # 资本存量从 0 到 400
+
+# 输出函数（看起来像是立方根函数，我们假设 Y = c * K^(1/3)）
+c = 160 / (400 ** (1/3))  # 假设当资本存量是 400 时最大输出是 160
+Y = c * K ** (1/3)
+
+# 储蓄函数（假设输出的恒定储蓄率是 1/4）
+s = 1/4  # 储蓄率
+S = s * Y  # 储蓄函数
+
+# 折旧函数（线性，接近 K=250 时与储蓄函数交叉）
+# 假设当 K=0 时折旧是 0，并找到它与储蓄交叉的点
+dep_rate = S[np.where(K >= 250)[0][0]] / 250
+D = dep_rate * K  # 折旧函数
+
+# 绘制函数图
+plt.figure(figsize=(10, 6))
+plt.plot(K, Y, label='output', color='red')
+plt.plot(K, S, label='saving', color='blue')
+plt.plot(K, D, label='depreciation', color='magenta')
+
+plt.xlabel('资本存量',fontname='SourceHanSerifSC-Medium')
+plt.ylabel('数值',fontname='SourceHanSerifSC-Medium')
+plt.title('经济函数',fontname='SourceHanSerifSC-Medium')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+```
